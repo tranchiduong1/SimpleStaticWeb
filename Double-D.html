@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Double-D Hệ Thống Bán Lẻ Uy Tín</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"
+<link rel="shortcut icon" href="images/icon/iconTitle.png" />
+<link href="css/css-Double-D.css" rel="stylesheet" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(function(){
+$(window).scroll(function () {
+if ($(this).scrollTop() > 100) $(".backtop").fadeIn();
+else $(".backtop").fadeOut();
+});
+$(".backtop").click(function () {
+$("body,html").animate({scrollTop: 0}, "slow");
+});
+});
+</script>
+<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+<link rel="stylesheet" href="css/owl.theme.default.min.css"/>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+</head>
+
+<body>
+	<div class="backtop">
+    	<div>
+    		<img src='Images/icon/top.png'/>
+    	</div>
+	</div>
+
+    <header class="header sticky">
+        <div id="nav">
+        	<div class="header_nav"> 
+             		<div class="container">   	
+                            <a class="logo" title="Double-D Store" href="#">
+                                    <img src="images/title.jpg" />
+                            </a>
+                        <div class="header_search">
+                            <div class="box_search">
+                                <form id="searchProduct" action="#" method="post" >
+                                    <input class="topinput" type="text" placeholder="Bạn tìm sản phẩm gì.." maxlength="50"/>
+                                    <button class="btntop" type="submit"></button>
+                                </form>
+                                <!--<form id="searchWarranty" action="#" method="post">
+                                    <input class="warrantyinput" type="text" placeholder="Tra cứu bảo hành.."/>
+                                    <input class="btnSend" type="button" value="Gửi" />
+                                </form>-->
+                                <div class="imei_search" >
+                                        <input class="warrantyinput" name="imei" placeholder="Tra cứu bảo hành"	/>
+                                        <input onClick="searchWarranty()"class="btnsend" type="button" value="Gửi"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menutop row">
+                            <ul class="menu">
+                              <li class="mnitem" id="icon_1">
+                                    <a href="#" target="_blank">
+                                        <span class="icon"></span>                                        
+                                        điện thoại
+                                    </a>
+                              </li>
+                              <li class="mnitem" id="icon_2">
+                              		<a href="#" target="_blank">
+                                    	<span class="icon"></span>  
+                                        tivi xiaomi
+                                    </a>
+                              </li>  
+                              <li class="mnitem" id="icon_3">
+                              		<a href="#" target="_blank">
+                                    	<span class="icon"></span>  
+                                        phụ kiện
+                                    </a>
+                              </li> 
+                              <li class="mnitem" id="icon_4">
+                              		<a href="#" target="_blank">
+                                    	<span class="icon"></span>  
+                                        dịch vụ
+                                    </a>
+                              </li>   
+                              <li class="mnitem" id="icon_5">
+                              		<a href="#" target="_blank">
+                              			<span class="icon"></span>  
+                                        bán trả góp
+                              		</a>
+                              </li> 
+                              <li class="mnitem" id="icon_6">
+                                    <a href="#" target="_blank">
+                                    	<span class="icon"></span>  
+                                        tin tức
+                                    </a>
+                              </li>    
+                              <li class="mnitem" id="icon_7">
+                              		<a href="#" target="_blank">
+                              			<span class="icon"></span>  
+                                        diễn đàn
+                              		</a>
+                              </li> 
+                            </ul>
+                        </div>
+        		</div> 
+            </div>
+        </div>
+    </header>
+    <div class="body">
+    	<div class="banner">
+        		<div class='slider'>
+                    <div class='slider-items-container'>
+                    	 <div class='slider-item'>
+                            <img src="images/banner/google pixel.png" />
+                        </div>
+                        <div class='slider-item'>
+                            <img src="images/banner/tra gop.png" />
+                        </div>
+                        <div class='slider-item'>
+                            <img src="images/banner/lgg6.png" />
+                        </div>
+                        <div class='slider-item'>
+                            <img src="images/banner/htcu11.png" />
+                        </div>	
+                    </div>	
+                    <div class='controls'>
+                        <a href="#" class='prev-btn'><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                        <a href="#" class='next-btn'><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
+                    <div class='dots'>
+                        
+                    </div>	
+                </div>	
+        </div>
+        
+        <script type="text/javascript">
+        	function setSlider(){
+	
+					$(".slider").each( function(){
+						
+						var $slider = $(this),
+								$itemscontainer = $slider.find(".slider-items-container");
+						
+						if ($itemscontainer.find(".slider-item.active").length == 0){
+							$itemscontainer.find(".slider-item").first().addClass("active");
+						}
+						
+						function setWidth(){
+							var totalWidth = 0
+							
+							$($itemscontainer).find(".slider-item").each( function(){
+								totalWidth += $(this).outerWidth();
+							});
+							
+							$itemscontainer.width(totalWidth);
+							
+						}
+						function setTransform(){
+							
+							var $activeItem = $itemscontainer.find(".slider-item.active"),
+									activeItemOffset = $activeItem.offset().left,
+									itemsContainerOffset = $itemscontainer.offset().left,
+									totalOffset = activeItemOffset - itemsContainerOffset
+							
+							$itemscontainer.css({"transform": "translate( -"+totalOffset+"px, 0px)"})
+							
+						}
+						function nextSlide(){
+							var activeItem = $itemscontainer.find(".slider-item.active"),
+									activeItemIndex = activeItem.index(),
+									sliderItemTotal = $itemscontainer.find(".slider-item").length,
+									nextSlide = 0;
+							
+							if (activeItemIndex + 1 > sliderItemTotal - 1){
+								nextSlide = 0;
+							}else{
+								nextSlide = activeItemIndex + 1
+							}
+							
+							var nextSlideSelect = $itemscontainer.find(".slider-item").eq(nextSlide),
+									itemContainerOffset = $itemscontainer.offset().left,
+									totalOffset = nextSlideSelect.offset().left - itemContainerOffset
+							
+							$itemscontainer.find(".slider-item.active").removeClass("active");
+							nextSlideSelect.addClass("active");
+							$slider.find(".dots").find(".dot").removeClass("active")
+							$slider.find(".dots").find(".dot").eq(nextSlide).addClass("active");
+							$itemscontainer.css({"transform": "translate( -"+totalOffset+"px, 0px)"})
+							
+						}
+						function prevSlide(){
+							var activeItem = $itemscontainer.find(".slider-item.active"),
+									activeItemIndex = activeItem.index(),
+									sliderItemTotal = $itemscontainer.find(".slider-item").length,
+									nextSlide = 0;
+							
+							if (activeItemIndex - 1 < 0){
+								nextSlide = sliderItemTotal - 1;
+							}else{
+								nextSlide = activeItemIndex - 1;
+							}
+							
+							var nextSlideSelect = $itemscontainer.find(".slider-item").eq(nextSlide),
+									itemContainerOffset = $itemscontainer.offset().left,
+									totalOffset = nextSlideSelect.offset().left - itemContainerOffset
+							
+							$itemscontainer.find(".slider-item.active").removeClass("active");
+							nextSlideSelect.addClass("active");
+							$slider.find(".dots").find(".dot").removeClass("active")
+							$slider.find(".dots").find(".dot").eq(nextSlide).addClass("active");
+							$itemscontainer.css({"transform": "translate( -"+totalOffset+"px, 0px)"})
+							
+						}
+						function makeDots(){
+							var activeItem = $itemscontainer.find(".slider-item.active"),
+									activeItemIndex = activeItem.index(),
+									sliderItemTotal = $itemscontainer.find(".slider-item").length;
+							
+							for (i = 0; i < sliderItemTotal; i++){
+								$slider.find(".dots").append("<div class='dot'></div>")
+							}
+							
+							$slider.find(".dots").find(".dot").eq(activeItemIndex).addClass("active")
+							
+						}
+						
+						setWidth();
+						setTransform();
+						makeDots();
+						
+						$(window).resize( function(){
+									setWidth();
+									setTransform();
+						});
+						
+						var nextBtn = $slider.find(".controls").find(".next-btn"),
+								prevBtn = $slider.find(".controls").find(".prev-btn");
+						
+						nextBtn.on('click', function(e){
+							e.preventDefault();
+							nextSlide();
+						});
+						
+						prevBtn.on('click', function(e){
+							e.preventDefault();
+							prevSlide();
+						});
+						
+						$slider.find(".dots").find(".dot").on('click', function(e){
+							
+							var dotIndex = $(this).index(),
+									totalOffset = $itemscontainer.find(".slider-item").eq(dotIndex).offset().left - $itemscontainer.offset().left;
+									
+							$itemscontainer.find(".slider-item.active").removeClass("active");
+							$itemscontainer.find(".slider-item").eq(dotIndex).addClass("active");
+							$slider.find(".dots").find(".dot").removeClass("active");
+							$(this).addClass("active")
+							
+							$itemscontainer.css({"transform": "translate( -"+totalOffset+"px, 0px)"})
+							
+						});
+						
+					});
+					
+				}
+		
+			setSlider();
+        </script>
+        <div class="news">       
+                     <ul>
+                     	<li>
+                            <a href="https://www.vietgiaitri.com/2-tek/the-gioi-so/201904/dan-dau-thi-truong-trong-thap-ky-toi-moi-la-muc-tieu-chinh-cua-samsung-3892893/">
+                                <img width="100" height="70" src="images/news/dan-dau-thi-truong-trong-thap-ky-toi-moi-la-muc-tieu-chinh-cua-samsung-600x350.jpg" alt="Dẫn đầu thị trường trong thập kỷ tới mới là mục tiêu chính của Samsung">
+                                 <p>Dẫn đầu thị trường trong thập kỷ tới mới là mục tiêu chính của Samsung</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.thegioididong.com/tin-tuc/iphone-xii-man-hinh-cong-camera-selfie-an-nut-volume-ao-1160484">
+                                <img width="100" height="70" src="images/news/iphone-xii-trong-mo-man-hinh-cong-camera-selfie-an-nut-volume-ao-600x350.jpg" alt="iPhone XII &amp;quot;trong mơ&amp;quot;: Màn hình cong, camera selfie ẩn, nút volume ảo">
+                                 <p>iPhone XII "trong mơ": Màn hình cong, camera selfie ẩn, nút volume ảo</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.thegioididong.com/tin-tuc/apple-muon-cac-doi-tac-su-dung-100-nang-luong-xanh-trong-san-xuat-1160258">
+                                <img width="100" height="70" src="images/news/apple-muon-cac-doi-tac-su-dung-100-nang-luong-xanh-trong-san-xuat-600x350.jpg" alt="Apple muốn các đối tác sử dụng 100% năng lượng xanh trong sản xuất">
+                                 <p>Apple muốn các đối tác sử dụng 100% năng lượng xanh trong sản xuất</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.thegioididong.com/tin-tuc/samsung-tung-cap-nhat-giup-van-tay-sieu-am-galaxy-s10-nhanh-hon-1160263">
+                                <img width="100" height="70" src="images/news/samsung-tung-cap-nhat-giup-van-tay-sieu-am-tren-galaxy-s10-nhanh-hon-600x350.jpg" alt="Samsung tung cập nhật giúp vân tay siêu âm trên Galaxy S10 nhanh hơn">
+                                 <p>Samsung tung cập nhật giúp vân tay siêu âm trên Galaxy S10 nhanh hơn</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.thegioididong.com/tin-tuc/zalotaxi-tich-hop-ca-fastgo-mai-linh-vinasun-vinataxi-vao-ung-dung-goi-xe-cua-minh-1160249">
+                                <img width="100" height="70" src="images/news/zalotaxi-tich-hop-ca-fastgo-mai-linh-vinasun-vinataxi-vao-ung-dung-goi-xe-cua-minh-600x350.jpg" alt="ZaloTaxi tích hợp cả FastGo, Mai Linh, VinaSun, VinaTaxi vào ứng dụng gọi xe của mình">
+                                 <p>ZaloTaxi tích hợp cả FastGo, Mai Linh, VinaSun, VinaTaxi vào ứng dụng gọi xe của mình</p>
+                            </a>
+                        </li>
+                     </ul>
+    	</div>
+        <div class="product clear">
+            <div class="box-hd">
+                <h2 class="title">Sản phẩm nổi bật</h2>
+            </div>
+            <div class="box-bd">
+                <ul class="productdetails">
+                    <li class="productdetailsmini">
+                        <a href="#" title="HTC 10 Evo Quốc Tế">
+                            <img class="productcol" width="320" height="150" src="images/product/htc10.png" alt="HTC 10 Evo Quốc Tế">
+                            <h3>HTC 10 Evo Quốc Tế</h3>
+                            <strong>1.890.000₫</strong>
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">HTC 10 Evo Quốc Tế</span>
+                            <strong>1.890.000₫</strong>
+                            <p>Hệ điều hành: Android 7.0
+                            </p>
+                            <p>Màn hình: IPS LCD
+                            </p>
+                            <p>CPU: 4 nhân 1.5 GHz Cortex-A53 &amp; 4 nhân 2 GHz Cortex-A57
+                            </p>
+                            <p>RAM: 3G
+                            </p>
+                            <p>Camera chính: 18 MP
+                            </p>
+                            <p>Bộ nhớ trong: 32 GB
+                            </p>
+                            <p>RAM: 3 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Samsung Galaxy S6 Edge Quốc Tế">
+                            <img class="productcol" width="160" height="160" src="images/product/galaxy s6.jpg" alt="Samsung Galaxy S6 Edge Quốc Tế"/>
+                            <h3>Samsung Galaxy S6 Edge Quốc Tế</h3>
+                            <strong>3.990.000₫</strong>
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Samsung Galaxy S6 Edge Quốc Tế</span>
+                            <strong>3.990.000₫</strong>
+                            <p>Màn hình: 5.1 inches(~577 ppi),Super AMOLEDtouchscreen, 16M colors
+                            </p>
+                            <p>CPU: Exynos 7420,Quad-core 1.5 GHz Cortex-A53 &amp; Quad-core 2.1 GHz Cortex-A57
+                            </p>
+                            <p>RAM: 3 GB RAM
+                            </p>
+                            <p>Camera chính: 16 MP, 2988 x 5312 pixels
+                            </p>
+                            <p>Bộ nhớ trong: 32 Gb</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Samsung Galaxy S7 Edge Xách Tay Mỹ và Nhật">
+                            <img class="productcol" width="320" height="150" src="images/product/s7edge.png" alt="Samsung Galaxy S7 Edge Xách Tay Mỹ và Nhật">
+                            <h3>Samsung Galaxy S7 Edge Xách Tay Mỹ và Nhật</h3>
+                            <strong>4.490.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Samsung Galaxy S7 Edge Xách Tay Mỹ và Nhật</span>
+                            <strong>4.490.000₫</strong>
+                            <p>Màn hình: Super AMOLED, 5.5", Quad HD (2K)
+                            </p>
+                            <p>CPU: Exynos 8890 Octa
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Camera chính: 12 MP
+                            </p>
+                            <p>Bộ nhớ trong: 32 GB
+                            </p>
+                            <p>Dung lượng pin: Li-Ion 3600 mAh
+                            </p>
+                            <p>Hệ điều hành: Android</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="LG G6 Hàn Quốc ">
+                            <img class="productcol" width="320" height="150" src="images/product/g6.png" alt="LG G6 Hàn Quốc ">
+                            <h3>LG G6 Hàn Quốc </h3>
+                            <strong>2.990.000₫</strong>
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">LG G6 Hàn Quốc </span>
+                            <strong>2.990.000₫</strong>
+                            <p>Màn hình: IPS LCD, 5.7", Quad HD (2K)
+                            </p>
+                            <p>Hệ điều hành: Android 7.0
+                            </p>
+                            <p>Camera sau: 2 camera 13 MP
+                            </p>
+                            <p>Camera trước: 5 MP
+                            </p>
+                            <p>CPU: Qualcomm Snapdragon 821 4 nhân 64-bit
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Bộ nhớ trong: 32 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Google Pixel XL">
+                            <img class="productcol" width="320" height="150" src="images/product/pixel_xl.png" alt="Google Pixel XL">
+                            <h3>Google Pixel XL</h3>
+                            <strong>3.990.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Google Pixel XL</span>
+                            <strong>3.990.000₫</strong>
+                            <p>Bộ nhớ trong: 32 GB - 128GB
+                            </p>
+                            <p>Băng tần: Sim GSM, HSPA, LTE
+                            </p>
+                            <p>Camera trước: 8.0 MP
+                            </p>
+                            <p>Bảo mật nâng cao: Mở khóa bằng vân tay
+                            </p>
+                            <p>Cảm biến: Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometer
+                            </p>
+                            <p>Camer</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Lg G7 Hàn Quốc">
+                            <img class="productcol" width="320" height="150" src="images/product/lg-g7.png" alt="Lg G7 Hàn Quốc">
+                            <h3>Lg G7 Hàn Quốc</h3>
+                            <strong>7.990.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Lg G7 Hàn Quốc</span>
+                            <strong>7.990.000₫</strong>
+                            <p>Màn hình: IPS LCD, 6.1", Quad HD+ (2K+)
+                            </p>
+                            <p>Hệ điều hành: Android 8.0 (Oreo)
+                            </p>
+                            <p>Camera sau: 2 Camera 16 MP
+                            </p>
+                            <p>Camera trước: 8 MP
+                            </p>
+                            <p>CPU: Snapdragon 845 8 nhân
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="LG G7 ThinQ Quốc Tế">
+                            <img class="productcol" width="320" height="150" src="images/product/lg-g7.png" alt="LG G7 ThinQ Quốc Tế">
+                            <h3>LG G7 ThinQ Quốc Tế</h3>
+                            <strong>6.890.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">LG G7 ThinQ Quốc Tế</span>
+                            <strong>6.890.000₫</strong>
+                            <p>Màn hình: IPS LCD, 6.1", Quad HD+
+                            </p>
+                            <p>Hệ điều hành: Android 8.0 (Oreo)
+                            </p>
+                            <p>Camera sau: 16 MP
+                            </p>
+                            <p>Camera trước: 8 MP
+                            </p>
+                            <p>CPU: Snapdragon 845 8 nhân
+                            </p>
+                            <p>RAM: 4 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Samsung Galaxy S9 Plus Hàn Quốc">
+                            <img class="productcol" width="320" height="150" src="images/product/s9plus.png" alt="Samsung Galaxy S9 Plus Hàn Quốc">
+                            <h3>Samsung Galaxy S9 Plus Hàn Quốc</h3>
+                            <strong>10.200.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Samsung Galaxy S9 Plus Hàn Quốc</span>
+                            <strong>10.200.000₫</strong>
+                            <p>Màn hình: Super AMOLED, 5.8", Quad HD+ (2K+)
+                            </p>
+                            <p>Hệ điều hành: Android 8.0 (Oreo)
+                            </p>
+                            <p>Camera sau: 12 MP
+                            </p>
+                            <p>Camera trước: 8 MP
+                            </p>
+                            <p>CPU: Exynos 9810 8 nhân 64 bit
+                            </p>
+                            <p>RAM: 6 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Samsung Galaxy S8 Plus Hàn Quốc">
+                            <img class="productcol" width="320" height="150" src="images/product/s8plus.png" alt="Samsung Galaxy S8 Plus Hàn Quốc">
+                            <h3>Samsung Galaxy S8 Plus Hàn Quốc</h3>
+                            <strong>6.190.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Samsung Galaxy S8 Plus Hàn Quốc</span>
+                            <strong>6.190.000₫</strong>
+                            <p>Màn hình: Super AMOLED, 6.2", Quad HD+ (2K+)
+                            </p>
+                            <p>Hệ điều hành: Android 8.0 (Oreo)
+                            </p>
+                            <p>Camera sau: 12 MP
+                            </p>
+                            <p>Camera trước: 8 MP
+                            </p>
+                            <p>CPU: Exynos 8895 8 nhân 64-bit
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Galaxy Note 8 Hàn Quốc">
+                            <img class="productcol" width="320" height="150" src="images/product/note8.png" alt="Galaxy Note 8 Hàn Quốc">
+                            <h3>Galaxy Note 8 Hàn Quốc</h3>
+                            <strong>7.990.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Galaxy Note 8 Hàn Quốc</span>
+                            <strong>7.990.000₫</strong>
+                            <p>Màn hình: Super AMOLED, 6.3", Quad HD+ (2K+)
+                            </p>
+                            <p>Hệ điều hành: Android 7.0 (Nougat)
+                            </p>
+                            <p>Camera sau: 2 camera 12 MP
+                            </p>
+                            <p>Camera trước: 8 MP
+                            </p>
+                            <p>CPU: Exynos 8895 8 nhân 64-bit
+                            </p>
+                            <p>RAM: 6 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="LG V30 Plus Quốc Tế">
+                            <img class="productcol" width="320" height="150" src="images/product/lgv30.png" alt="LG V30 Plus Quốc Tế">
+                            <h3>LG V30 Plus Quốc Tế</h3>
+                            <strong>5.990.000₫</strong>
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">LG V30 Plus Quốc Tế</span>
+                            <strong>5.990.000₫</strong>
+                            <p>Màn hình: P-OLED, 6.0", Quad HD (2K)
+                            </p>
+                            <p>Hệ điều hành: Android 7.1 (Nougat)
+                            </p>
+                            <p>Camera sau: 16 MP và 13 MP (2 camera)
+                            </p>
+                            <p>Camera trước: 5 MP
+                            </p>
+                            <p>CPU: Qualcomm Snapdragon 835 8 nhân 64-bit
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="HTC U11">
+                            <img class="productcol" width="320" height="150" src="images/product/htcu11.png" alt="HTC U11">
+                            <h3>HTC U11</h3>
+                            <strong>5.490.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">HTC U11</span>
+                            <strong>5.490.000₫</strong>
+                            <p>Màn hình: Super LCD, 5.5", Quad HD (2K)
+                            </p>
+                            <p>Hệ điều hành: Android 7.1 (Nougat)
+                            </p>
+                            <p>Camera sau: 12 MP, f/1.7, tự động lấy nét, OIS, đèn flash LED
+                            </p>
+                            <p>Camera trước: 16 MP
+                            </p>
+                            <p>CPU: Qualcomm Snapdragon 835 8 nhân 64-bit
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="LG V20 Xách Tay Mỹ">
+                            <img class="productcol" width="320" height="150" src="images/product/lgv20.png" alt="LG V20 Xách Tay Mỹ">
+                            <h3>LG V20 Xách Tay Mỹ</h3>
+                            <strong>2.590.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">LG V20 Xách Tay Mỹ</span>
+                            <strong>2.590.000₫</strong>
+                            <p>Màn hình: IPS LCD, Chính: 5.7", phụ: 2.1", Quad HD (2K)
+                            </p>
+                            <p>Hệ điều hành: Android 7.0
+                            </p>
+                            <p>Camera sau: 16 MP và 8 MP (2 camera)
+                            </p>
+                            <p>Camera trước: 5 MP
+                            </p>
+                            <p>CPU: Snapdragon 820 4 nhân 64-bit
+                            </p>
+                            <p>RAM: 4 GB
+                            </p>
+                            <p>Bộ nhớ trong: 64 GB</p>
+                        </div>
+                    </li>
+                    <li class="productdetailsmini">
+                        <a href="#" title="Samsung Galaxy S7 Xách Tay Mỹ">
+                            <img class="productcol" width="320" height="150" src="images/product/s7.png" alt="Samsung Galaxy S7 Xách Tay Mỹ">
+                            <h3>Samsung Galaxy S7 Xách Tay Mỹ</h3>
+                            <strong>3.890.000₫</strong>
+                            
+                            <div class=" clear"></div>
+                        </a>
+                        <div class="bginfo">
+                            <span class="name">Samsung Galaxy S7 Xách Tay Mỹ</span>
+                            <strong>3.890.000₫</strong>
+                            <p>Màn hình: 5.1 inches (~72.1% screen-to-body ratio)
+                            </p>
+                            <p>1440 x 2560 pixels (~577 ppi pixel density)
+                            </p>
+                            <p>CPU: Snapdragon 820
+                            </p>
+                            <p>RAM: 4 GB RAM
+                            </p>
+                            <p>Camera chính: 12 MP, f/1.7, 26mm, phase detection autofocus, OIS, LED flash,
+                            </p>
+                            <p>B</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="product2 clear">
+                <div class="titleproduct">
+                    <h2>Tivi Xiaomi</h2>
+                    <a href="#">Xem tất cả</a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/4s 55inch.jpg" alt="Tivi Xiaomi 4S 55 inch">
+                            <h3>Tivi Xiaomi 4S 55 inch</h3>
+                            <strong>11.990.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/3s 65inch.jpg" alt="Tivi Xiaomi Mi TV 3S 65 inch">
+                            <h3>Tivi Xiaomi Mi TV 3S 65 inch</h3>
+                            <strong>15.900.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/3s 48inch.jpg" alt="Tivi Xiaomi Mi TV 3S 48 inch">
+                            <h3>Tivi Xiaomi Mi TV 3S 48 inch</h3>
+                            <strong>5.900.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/3s 43inch.jpg" alt="Tivi Xiaomi Mi TV 3S 43 inch">
+                            <h3>Tivi Xiaomi Mi TV 3S 43 inch</h3>
+                            <strong>4.000.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/4a 75inch.jpg" alt="Tivi Xiaomi 4A 75 inch">
+                            <h3>Tivi Xiaomi 4A 75 inch</h3>
+                            <strong>34.900.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/4a 65inch.jpg" alt="Tivi Xiaomi 4A 65 inch">
+                            <h3>Tivi Xiaomi 4A 65 inch</h3>
+                            <strong>16.900.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/4a 55inch.jpg" alt="Tivi Xiaomi 4A 55 inch">
+                            <h3>Tivi Xiaomi 4A 55 inch</h3>
+                            <strong>11.900.000₫</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img width="120" height="120" src="images/product2/4a 43inch.jpg" alt="Tivi Xiaomi 4A 43 inch">
+                            <h3>Tivi Xiaomi 4A 43 inch</h3>
+                            <strong>8.900.000₫</strong>
+                        </a>
+                    </li>
+                </ul>
+    	</div>
+        <div class="product2">
+            <div class="titleproduct">
+                <h2>Phụ Kiện</h2>
+                <a href="#">Xem tất cả</a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/oplung.jpg" alt="Ốp lưng HTC U11">
+                        <h3>Ốp lưng HTC U11</h3>
+                        <strong>50.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/oplung.jpg" alt="Ốp Lưng Galaxy Note 9">
+                        <h3>Ốp Lưng Galaxy Note 9</h3>
+                        <strong>50.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/tailgv20.jpg" alt="Tai B&amp;O LG V20">
+                        <h3>Tai B&amp;O LG V20</h3>
+                        <strong>300.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/cuonglucn8s9.jpg" alt="Cường lực Samsung Galaxy Note 8">
+                        <h3>Cường lực Samsung Galaxy Note 8</h3>
+                        <strong>50.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/cuonglucn8s9.jpg" alt="Cường lực Samsung Galaxy S9 Plus">
+                        <h3>Cường lực Samsung Galaxy S9 Plus</h3>
+                        <strong>50.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/oplung.jpg" alt="Ốp Samsung Galaxy S9 Plus">
+                        <h3>Ốp Samsung Galaxy S9 Plus</h3>
+                        <strong>50.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/capsamsung.jpg" alt="Cáp samsung ">
+                        <h3>Cáp samsung </h3>
+                        <strong>50.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/opsiliconv30.jpg" alt="Ốp Silicon Lg V30">
+                        <h3>Ốp Silicon Lg V30</h3>
+                        <strong>80.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="images/product2/cusacsamsung.jpg" alt="Củ Sac Nhanh Samsung">
+                        <h3>Củ Sac Nhanh Samsung</h3>
+                        <strong>150.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/394-gthumb-oplung-v20.jpg" alt="Ốp Silicon Lg V20">
+                        <h3>Ốp Silicon Lg V20</h3>
+                        <strong>80.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/393-gthumb-oplung-g6.jpg" alt="Ốp Silicon LG G6">
+                        <h3>Ốp Silicon LG G6</h3>
+                        <strong>80.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/391-gthumb-cuonglucv30.jpg" alt="Cường Lực V30">
+                        <h3>Cường Lực V30</h3>
+                        <strong>80.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/390-gthumb-cuonglucv20.jpg" alt="Cường lực LG V20">
+                        <h3>Cường lực LG V20</h3>
+                        <strong>80.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/389-gthumb-cuonglug6.jpg" alt="Cường Lực LG G6">
+                        <h3>Cường Lực LG G6</h3>
+                        <strong>80.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/387-gthumb-mieng-dan-deo-galaxy-note-8.jpg" alt="Miếng Dán Màn Hình Note8">
+                        <h3>Miếng Dán Màn Hình Note8</h3>
+                        <strong>100.000₫</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img width="120" height="120" src="https://xdavn.com/images/201804/thumb_img/386-gthumb-tai-samsung-s7.jpg" alt="Tai nghe Samsung ">
+                        <h3>Tai nghe Samsung </h3>
+                        <strong>100.000₫</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="map">
+    	<div class="margin">
+        	<div class="main_col" id="map-canvas">
+            		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.7310949856801!2d106.67652082917134!3d10.81709899951838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ5JzAxLjYiTiAxMDbCsDQwJzM3LjQiRQ!5e0!3m2!1svi!2s!4v1555773871280!5m2!1svi!2s" width="900" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        	<div class="sub_col">
+            	<ul>
+                	<li>
+                    	<h2>Danh sách cửa hàng</h2>
+                    </li>
+                	<li>
+                    	<p>Địa chỉ: 97 Võ Văn Tần, Phường 6, Quận 3, Thành Phố Hồ Chí Minh</p>
+                    </li>
+                    <li>
+                    	<p>Địa chỉ: 371 Nguyễn Kiệm, Phường 3, Quận Gò Vấp, Thành Phố Hồ Chí Minh</p>
+                    </li>
+                    <li>
+                    	<p>Địa chỉ: 02 Mai Thị Lựu, Phường Đa Kao, Quận 1, Thành Phố Hồ Chí Minh</p>
+                    </li>
+                    <li>
+                    	<p>Địa chỉ: 35-37 Hồ Hảo Hớn, Phường Cô Giang, Quận 1, Thành Phố Hồ Chí Minh</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <footer>
+    	<div class="rowfoot">
+        	<ul class="colfoot" id="col1">
+            	<li>
+                	<a href="#">Chính sách đổi trả</a>
+                </li>
+                <li>
+                	<a href="#">Chính sách bảo hành</a>
+                </li>
+                <li>
+                	<a href="#">Giao hàng và thanh toán</a>
+                </li>
+            </ul>
+        	<ul class="colfoot" id="col2">
+            	<li>
+                	<a href="#">Giới thiệu</a>
+                </li>
+                <li>
+                	<a href="#">Góp ý khiếu nại</a>
+                </li>
+            </ul>
+            <ul class="colfoot" id="col3">
+            	<li>
+                	<p>Hotline: Đạt <a>0372723143</a> (9:00 - 21:00)</p>
+                </li>
+                <li>
+                	<p>Hotline: Dương <a>00768288714</a> (9:00 - 21:00)</p>
+                </li>
+            </ul>
+            <ul class="colfoot2" id="col4">
+            	<li id="social">
+                	Kết nối mạng xã hội:
+                </li>
+                <li id="linksocial">
+                	<a href="https://www.facebook.com/vandat.nguyen.5895" target="_blank">
+                    	<img src="images/icon/facebook.png"
+                    </a>
+                    <a href="https://www.facebook.com/tranchiduong" target="_blank">
+                    	<img src="images/icon/google.png" />
+                    </a>
+                    <a href="https://www.facebook.com/vandat.nguyen.5895" target="_blank">
+                    	<img src="images/icon/twitter.png" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
